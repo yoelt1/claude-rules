@@ -34,7 +34,7 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
   least one direct search, and say where you looked. A helper's "not found" isn't checked yet.
 - When something is blocked, look for another way before giving up: first the connectors and
   tools already connected, then ones that could be added (connector and plugin directory;
-  Firecrawl for web pages). Offer them to me.
+  Firecrawl when built-in web tools fall short). Offer them to me.
 - Video transcripts: try free sources first (event page, video page). If those fail, use the
   vidIQ transcript tool (5 credits a video; approved).
 
@@ -43,7 +43,7 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
 - AI setup: changing rules, scripts or hooks → superpowers:writing-plans, then test-driven-development and verification-before-completion, then requesting-code-review.
 - Setup broken or acting strange → superpowers:systematic-debugging, before any fix. New or edited skill → superpowers:writing-skills.
 - "What should I add or automate?" → claude-code-setup:claude-automation-recommender. House renders, images or video → the Higgsfield connector.
-- Design options or ideas → superpowers:brainstorming. Research questions → anthropic-skills:deep-research. Web pages → Firecrawl skills, not WebFetch.
+- Design options or ideas → superpowers:brainstorming. Research questions → anthropic-skills:deep-research. Web pages → built-in web search and fetch first; Firecrawl skills only when those fall short (site blocks them, page needs JavaScript or clicks, many pages at once).
 - Email → Gmail connector; calendar → Google Calendar connector; documents → anthropic-skills:docs (Google files: google-workspace); YouTube → vidIQ.
 - Before I say major work is done → the checker agent, then the second-look skill. If nothing installed fits a multi-step job, I search the plugin catalog and give a claude.com/marketplace link.
 
