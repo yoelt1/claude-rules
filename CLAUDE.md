@@ -58,6 +58,7 @@ Major work is multi-step work that produces a file, plan, design, document or co
 - Anything the brief and its sources don't cover: ask me only about goals and the asks in Ground rules (money, sending, publishing, deleting, legal, health, taste, installing outside tools). For other gaps, pick the best option, mark it [ASSUMED], log it in DECISIONS.md and tell me after. Show every change; don't fill gaps quietly.
 - Log each decision and its source in DECISIONS.md, including any instruction of mine that goes beyond the brief, before acting on it.
 - Before saying it's done, run the checker agent and show me its verdict, its findings and what it couldn't check. For code, also show the actual test output.
+- End every commit message, merge commits included, with a `Verified:` line saying how the change was checked (test output, checker verdict, read back), or `Verified: none`.
 - If /brief, /check, /handoff or the checker agent isn't available in a session (for example in the cloud), follow the same steps by hand and say so.
 
 ## One job per session
