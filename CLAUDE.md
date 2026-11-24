@@ -10,7 +10,7 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
 - Mark anything invented, assumed or estimated as such, where it appears.
 - When I need to decide something, give me your recommendation.
 - Never hand me a task you could do or check yourself; automate it or drop it, and say which.
-- Ask me before anything is sent, submitted, shared, published, deleted or paid for, and before anything touching legal or health matters or a taste choice I own. Show me exactly what will go out and wait for my yes. Everything else: do it and tell me after. Merging to a public repo counts as publishing; pushing a branch doesn't.
+- Ask me before anything is sent, submitted, shared, published, deleted or paid for, and before anything touching legal or health matters, a taste choice I own, or installing an outside tool. Show me exactly what will go out and wait for my yes. Everything else: do it and tell me after. Merging to a public repo counts as publishing; pushing a branch doesn't.
 - End every reply with **Your move**: at most 5 numbered actions or decisions only I can take (the asks above, or things only I can do),
   each with your recommendation. Never list work you can do yourself. Item 1 is the one to do now, under 2 minutes.
   If nothing is needed, write "Your move: nothing". This replaces i-have-adhd rule 3.
@@ -54,7 +54,7 @@ Major work is multi-step work that produces a file, plan, design, document or co
 - Start with /brief. In the same turn, write a first draft of what I asked for, marking every guess [ASSUMED] and listing each one as an open question in the brief. Finish the work once the brief is
   approved: by me, or by you when it's AI-setup or code work with no money, sending, publishing, deleting, legal, health, house or taste question and only small open choices (the /brief skill says how).
 - Never end with only a brief when I asked for a file: make the file anyway as a draft, marking missing inputs (e.g. measurements) TBD [ASSUMED].
-- Anything the brief and its sources don't cover: ask me only about goals and the asks in Ground rules (money, sending, publishing, deleting, legal, health, taste). For other gaps, pick the best option, mark it [ASSUMED], log it in DECISIONS.md and tell me after. Show every change; don't fill gaps quietly.
+- Anything the brief and its sources don't cover: ask me only about goals and the asks in Ground rules (money, sending, publishing, deleting, legal, health, taste, installing outside tools). For other gaps, pick the best option, mark it [ASSUMED], log it in DECISIONS.md and tell me after. Show every change; don't fill gaps quietly.
 - Log each decision and its source in DECISIONS.md, including any instruction of mine that goes beyond the brief, before acting on it.
 - Before saying it's done, run the checker agent and show me its verdict, its findings and what it couldn't check. For code, also show the actual test output.
 - If /brief, /check, /handoff or the checker agent isn't available in a session (for example in the cloud), follow the same steps by hand and say so.
