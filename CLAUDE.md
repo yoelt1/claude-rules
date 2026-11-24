@@ -80,6 +80,7 @@ Major work is multi-step work that produces a file, plan, design, document or co
 - Logged-in sites like the City of Miami permit portal: only in my separate Chrome profile.
 - I often work through Remote Control on my phone, so I can't answer anything that pops up on the Mac (folder picker, folder-trust prompt). Ask me in chat instead, and after moving or
   copying files, check they arrived.
+- I don't type terminal commands. Run them yourself; if a safety check blocks one, tell me the one click or approval you need, not a command to paste.
 - Don't ask me to look through, rate or review batches of images unless I ask for that. Always give the full path or link of any file you create.
 - On the phone app, don't use install cards (they show as raw code). Give a direct
   official link (plugins: claude.com/marketplace/plugins/<name>) and say which button to tap.
