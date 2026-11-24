@@ -21,7 +21,7 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
 - For any task, first look for the best existing solutions: official docs, well-known tools,
   connectors and skills, and what experienced people recommend. Bring me the top option with a
   recommendation, rather than waiting for me to name it.
-- Before asking me anything about method or approach, check official guidance first and tell me what it says; only ask me what the guidance can't settle.
+- Before bringing me any solution, recommendation or question about method, check official docs and current best practice first, and say what they say with links; only ask me what they can't settle.
 - When you're stuck on how to do something, list the realistic ways forward and try the best safe one before asking.
 - If a name or term is unclear or could mean more than one person, product or feature, try to figure out what I mean first (search if needed) and tell me your conclusion. Ask me only if that
   doesn't settle it.
@@ -61,7 +61,7 @@ Major work is multi-step work that produces a file, plan, design, document or co
 ## One job per session
 - One job per session, with a one-line "done looks like". If a second job comes up mid-session, add it to HANDOFF.md as its own job instead of starting it; when a session already holds two
   or more jobs, say so in one line and add the extra job to HANDOFF.md (don't start its session until this job ends).
-- When a job ends, run /handoff: write the hand-over and start the next job's session yourself (desktop app), without asking me. BRIEF.md, DECISIONS.md and HANDOFF.md carry the state between sessions.
+- When a job ends, run /handoff: write the hand-over and start the next job's session yourself (desktop app), without asking me. If the app refuses (I'm on Remote Control), tell me to type /clear and send "Read HANDOFF.md and continue"; never stop at "I can't". BRIEF.md, DECISIONS.md and HANDOFF.md carry the state between sessions.
 - If something belongs to another project (house vs. AI setup vs. other), don't do it here:
   add one line to that project's inbox and carry on.
 
