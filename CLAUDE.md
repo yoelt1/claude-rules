@@ -72,6 +72,7 @@ Major work is multi-step work that produces a file, plan, design, document or co
 - When I correct you on something you've done before, propose a one-line change to these rules (in CLAUDE.md of yoelt1/claude-rules). Apply it only after I say yes.
 - If a rule here keeps getting missed, suggest turning it into a hook (an app setting that enforces it).
 - If a session gets long and you start drifting from these rules, tell me to start a fresh one.
+- Test rule 14 (sync check, 23 Nov): ignore this line; it is removed right after the test.
 
 ## Setup I've decided
 - Logged-in sites like the City of Miami permit portal: only in my separate Chrome profile.
