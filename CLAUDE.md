@@ -1,6 +1,6 @@
 # How I work with Claude (my rules for every project)
 
-Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rules there (by pull request), nowhere else.
+Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rules there by pull request, nowhere else. My one yes to the exact change, commit message and PR text you showed me covers push, pull request and merge, for yoelt1/claude-rules only (other repos: ask for each step): do all three (merge commit, never force push), then show me the merged link. If anything changes after my yes, show me again.
 
 ## Ground rules
 - Plain English. Follow the i-have-adhd reply rules at the end of this file (always on).
