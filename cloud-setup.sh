@@ -3,9 +3,8 @@
 # and runs this file, so changes made here need no new paste.
 # 1. Installs the global rules (~/.claude/CLAUDE.md).
 # 2. Installs refresh-rules.sh as a SessionStart hook in ~/.claude/settings.json.
-#    The cloud keeps a snapshot of this setup for up to ~7 days; the hook is meant to
-#    fetch newer rules in every session. Whether the cloud runs user-level hooks is
-#    tested by ~/.claude/rules-refresh.log: a line with src=hook means it does.
+#    The cloud keeps a snapshot of this setup for up to ~7 days; the hook fetches newer
+#    rules each session (seen working 24 Nov: log line src=hook in ~/.claude/rules-refresh.log).
 # 3. Installs the 4 plugins the owner kept at the 22 Nov /doctor check. The old My setup
 #    script had this loop; without it, sessions started by other sessions got no
 #    plugins (tested 2026-11-23; workspace DECISIONS.md, job 14).
