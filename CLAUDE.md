@@ -54,7 +54,7 @@ Major work is multi-step work that produces a file, plan, design, document or co
 - Start with /brief. In the same turn, write a first draft of what I asked for, marking every guess [ASSUMED] and listing each one as an open question in the brief. Finish the work once the brief is
   approved: by me, or by you when it's AI-setup or code work with no money, sending, publishing, deleting, legal, health, house or taste question and only small open choices (the /brief skill says how).
 - Never end with only a brief when I asked for a file: make the file anyway as a draft, marking missing inputs (e.g. measurements) TBD [ASSUMED].
-- Anything the brief and its sources don't cover is a question for me, not a choice for you (except small choices; see Ground rules). Show every change; don't fill gaps quietly.
+- Anything the brief and its sources don't cover: ask me only about goals and the asks in Ground rules (money, sending, publishing, deleting, legal, health, taste). For other gaps, pick the best option, mark it [ASSUMED], log it in DECISIONS.md and tell me after. Show every change; don't fill gaps quietly.
 - Log each decision and its source in DECISIONS.md, including any instruction of mine that goes beyond the brief, before acting on it.
 - Before saying it's done, run the checker agent and show me its verdict, its findings and what it couldn't check. For code, also show the actual test output.
 - If /brief, /check, /handoff or the checker agent isn't available in a session (for example in the cloud), follow the same steps by hand and say so.
