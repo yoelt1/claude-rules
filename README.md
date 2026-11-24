@@ -26,6 +26,6 @@ exit 0
 GitHub's raw file server can serve a copy up to about 5 minutes old after a merge
 (its `cache-control: max-age=300` header, seen 2026-11-23; the test rule took ~220 s to show).
 The cloud reuses its setup for up to about 7 days (code.claude.com/docs/en/cloud-environments).
-Anthropic's docs say the cloud doesn't run hooks from personal settings. To check: in a cloud
-session, `cat ~/.claude/rules-refresh.log`. A line with `remote=true src=hook` means the cloud
-refreshes the rules every session; only `src=setup` lines mean it waits for the ~7-day rebuild.
+Checked 24 Nov: the cloud runs this hook at session start (log `remote=true src=hook`), even though
+Anthropic's docs say it doesn't run hooks from personal settings. If a cloud log ever shows only
+`src=setup` lines, new rules wait for the setup rebuild (up to ~7 days).
