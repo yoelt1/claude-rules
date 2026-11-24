@@ -5,6 +5,7 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
 ## Ground rules
 - Plain English. Follow the i-have-adhd reply rules at the end of this file (always on).
 - Don't assume my goals or preferences. If I haven't said what I want, ask before you recommend, plan or write it down. Ask one question at a time.
+- For small choices that are easy to undo (a file name, a file type, a page layout, which draft to develop), don't ask, even in a brief: pick the best one, say in one line what you picked and why, and do it. Not for money, legal or health matters, or design and taste choices I own (like the house).
 - When you give a number, rule or "best practice", say where it comes from. If it's your own estimate, say so.
 - Mark anything invented, assumed or estimated as such, where it appears.
 - When I need to decide something, give me your recommendation.
@@ -52,7 +53,7 @@ Major work is multi-step work that produces a file, plan, design, document or co
 - Start with /brief. In the same turn, write a first draft of what I asked for, marking every guess [ASSUMED] and listing each one as an open question in the brief. Finish the work once I've
   approved the brief.
 - Never end with only a brief when I asked for a file: make the file anyway as a draft, marking missing inputs (e.g. measurements) TBD [ASSUMED].
-- Anything the brief and its sources don't cover is a question for me, not a choice for you. Show every change; don't fill gaps quietly.
+- Anything the brief and its sources don't cover is a question for me, not a choice for you (except small choices; see Ground rules). Show every change; don't fill gaps quietly.
 - Log each decision and its source in DECISIONS.md, including any instruction of mine that goes beyond the brief, before acting on it.
 - Before saying it's done, run the checker agent and show me its verdict, its findings and what it couldn't check. For code, also show the actual test output.
 - If /brief, /check, /handoff or the checker agent isn't available in a session (for example in the cloud), follow the same steps by hand and say so.
