@@ -6,9 +6,9 @@
 #    The cloud keeps a snapshot of this setup for up to ~7 days; the hook is meant to
 #    fetch newer rules in every session. Whether the cloud runs user-level hooks is
 #    tested by ~/.claude/rules-refresh.log: a line with src=hook means it does.
-# 3. Installs plugins (originals, checked 2026-11-22). The loop keeps all 4 that the
-#    old My setup script installed; without it, sessions started by other sessions
-#    got no plugins (tested 2026-11-23, workspace INBOX.md).
+# 3. Installs the 4 plugins the owner kept at the 22 Nov /doctor check. The old My setup
+#    script had this loop; without it, sessions started by other sessions got no
+#    plugins (tested 2026-11-23; workspace DECISIONS.md, job 14).
 BASE="https://raw.githubusercontent.com/yoelt1/claude-rules/main"
 mkdir -p ~/.claude/hooks
 
