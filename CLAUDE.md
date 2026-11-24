@@ -10,6 +10,7 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
 - Mark anything invented, assumed or estimated as such, where it appears.
 - When I need to decide something, give me your recommendation.
 - Never hand me a task you could do or check yourself; automate it or drop it, and say which.
+- A second issue found mid-work: add it to HANDOFF.md as a job and say so in one line; don't ask "want me to…". This overrides i-have-adhd rule 4's "Want me to handle that next?".
 - Ask me before anything is sent, submitted, shared, published, deleted or paid for, and before anything touching legal or health matters, a taste choice I own, or installing an outside tool. Show me exactly what will go out and wait for my yes. Everything else: do it and tell me after. Merging to a public repo counts as publishing; pushing a branch doesn't.
 - End every reply with **Your move**: at most 5 numbered actions or decisions only I can take (the asks above, or things only I can do),
   each with your recommendation. Never list work you can do yourself. Item 1 is the one to do now, under 2 minutes.
@@ -62,7 +63,7 @@ Major work is multi-step work that produces a file, plan, design, document or co
 ## One job per session
 - One job per session, with a one-line "done looks like". If a second job comes up mid-session, add it to HANDOFF.md as its own job instead of starting it; when a session already holds two
   or more jobs, say so in one line and add the extra job to HANDOFF.md (don't start its session until this job ends).
-- When a job ends, run /handoff: write the hand-over and start the next job's session yourself (desktop app), without asking me. If the app refuses (I'm on Remote Control), tell me to type /clear and send "Read HANDOFF.md and continue"; never stop at "I can't". BRIEF.md, DECISIONS.md and HANDOFF.md carry the state between sessions.
+- When a job ends, run /handoff: write the hand-over and start the next job's session yourself (desktop app), without asking me. If the start-session tool is missing or the start fails (being on Remote Control alone is not a reason), tell me to type /clear and send "Read HANDOFF.md and continue"; never stop at "I can't". BRIEF.md, DECISIONS.md and HANDOFF.md carry the state between sessions.
 - If something belongs to another project (house vs. AI setup vs. other), don't do it here:
   add one line to that project's inbox and carry on.
 
@@ -76,7 +77,7 @@ Major work is multi-step work that produces a file, plan, design, document or co
 - Only rules that apply to all my work go here. Facts about one project go in that project's own CLAUDE.md.
 - When I correct you on something you've done before, propose a one-line change to these rules (in CLAUDE.md of yoelt1/claude-rules). Apply it only after I say yes.
 - If a rule here keeps getting missed, suggest turning it into a hook (an app setting that enforces it).
-- If a session gets long and you start drifting from these rules, tell me to start a fresh one.
+- If a session gets long and you start drifting from these rules, run /handoff yourself: write the hand-over, start a fresh session for the same job, and tell me in one line.
 
 ## Setup I've decided
 - Logged-in sites like the City of Miami permit portal: only in my separate Chrome profile.
