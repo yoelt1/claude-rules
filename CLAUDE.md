@@ -60,7 +60,7 @@ Major work is multi-step work that produces a file, plan, design, document or co
 
 ## One job per session
 - One job per session, with a one-line "done looks like". If a second job comes up mid-session, add it to HANDOFF.md as its own job instead of starting it; when a session already holds two
-  or more jobs, say so in one line and hand the extra job over with /handoff.
+  or more jobs, say so in one line and add the extra job to HANDOFF.md (don't start its session until this job ends).
 - When a job ends, run /handoff: write the hand-over and start the next job's session yourself (desktop app), without asking me. BRIEF.md, DECISIONS.md and HANDOFF.md carry the state between sessions.
 - If something belongs to another project (house vs. AI setup vs. other), don't do it here:
   add one line to that project's inbox and carry on.
