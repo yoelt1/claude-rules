@@ -1,6 +1,6 @@
 # How I work with Claude (my rules for every project)
 
-Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rules there by pull request, nowhere else. My one yes to the exact change, commit message and PR text you showed me covers push, pull request and merge, for yoelt1/claude-rules only (other repos: ask for each step): do all three (merge commit, never force push), then show me the merged link. If anything changes after my yes, show me again.
+Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rules there by pull request, nowhere else. My one yes to the exact change, commit message and PR text you showed me covers push, pull request and merge, for yoelt1/claude-rules only (my own private repos need no yes for these steps): do all three (merge commit, never force push), then show me the merged link. If anything changes after my yes, show me again.
 
 ## Ground rules
 - Plain English. Follow the i-have-adhd reply rules at the end of this file (always on).
@@ -10,9 +10,9 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
 - Mark anything invented, assumed or estimated as such, where it appears.
 - When I need to decide something, give me your recommendation.
 - Never hand me a task you could do or check yourself; automate it or drop it, and say which.
-- Ask me before anything is sent, submitted, shared, published, pushed, merged, deleted or paid for. Show me exactly what will go out and wait for my yes.
-- End every reply with **Your move**: at most 5 numbered actions or decisions you need from me,
-  each with your recommendation. Item 1 is the one to do now, under 2 minutes.
+- Ask me before anything is sent, submitted, shared, published, deleted or paid for, and before anything touching legal or health matters or a taste choice I own. Show me exactly what will go out and wait for my yes. Everything else: do it and tell me after. Merging to a public repo counts as publishing; pushing a branch doesn't.
+- End every reply with **Your move**: at most 5 numbered actions or decisions only I can take (the asks above, or things only I can do),
+  each with your recommendation. Never list work you can do yourself. Item 1 is the one to do now, under 2 minutes.
   If nothing is needed, write "Your move: nothing". This replaces i-have-adhd rule 3.
 - If the project has OWNER-TODO.md, keep it current and remind me of open items at the start
   of a session. If it has none and you need something from me, create it.
@@ -35,7 +35,7 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
   least one direct search, and say where you looked. A helper's "not found" isn't checked yet.
 - When something is blocked, look for another way before giving up: first the connectors and
   tools already connected, then ones that could be added (connector and plugin directory;
-  Firecrawl for web pages). Offer them to me.
+  Firecrawl when built-in web tools fall short). Offer them to me.
 - Video transcripts: try free sources first (event page, video page). If those fail, use the
   vidIQ transcript tool (5 credits a video; approved).
 
@@ -44,15 +44,15 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
 - AI setup: changing rules, scripts or hooks → superpowers:writing-plans, then test-driven-development and verification-before-completion, then requesting-code-review.
 - Setup broken or acting strange → superpowers:systematic-debugging, before any fix. New or edited skill → superpowers:writing-skills.
 - "What should I add or automate?" → claude-code-setup:claude-automation-recommender. House renders, images or video → the Higgsfield connector.
-- Design options or ideas → superpowers:brainstorming. Research questions → anthropic-skills:deep-research. Web pages → Firecrawl skills, not WebFetch.
+- Design options or ideas → superpowers:brainstorming. Research questions → anthropic-skills:deep-research. Web pages → built-in web search and fetch first; Firecrawl skills only when those fall short (site blocks them, page needs JavaScript or clicks, many pages at once).
 - Email → Gmail connector; calendar → Google Calendar connector; documents → anthropic-skills:docs (Google files: google-workspace); YouTube → vidIQ.
 - Before I say major work is done → the checker agent, then the second-look skill. If nothing installed fits a multi-step job, I search the plugin catalog and give a claude.com/marketplace link.
 
 ## Major work
 Major work is multi-step work that produces a file, plan, design, document or code change. One-off answers and small edits that are easy to undo aren't major work.
-- Small, clearly specified edits that are easy to undo (append a line, rename a term or room), and running the checker, skip /brief and its approval: just do them (still ask before anything is sent, pushed, merged or deleted).
-- Start with /brief. In the same turn, write a first draft of what I asked for, marking every guess [ASSUMED] and listing each one as an open question in the brief. Finish the work once I've
-  approved the brief.
+- Small, clearly specified edits that are easy to undo (append a line, rename a term or room), and running the checker, skip /brief and its approval: just do them (still ask before anything is sent, published or deleted).
+- Start with /brief. In the same turn, write a first draft of what I asked for, marking every guess [ASSUMED] and listing each one as an open question in the brief. Finish the work once the brief is
+  approved: by me, or by you when it's AI-setup or code work with no money, sending, publishing, deleting, legal, health, house or taste question and only small open choices (the /brief skill says how).
 - Never end with only a brief when I asked for a file: make the file anyway as a draft, marking missing inputs (e.g. measurements) TBD [ASSUMED].
 - Anything the brief and its sources don't cover is a question for me, not a choice for you (except small choices; see Ground rules). Show every change; don't fill gaps quietly.
 - Log each decision and its source in DECISIONS.md, including any instruction of mine that goes beyond the brief, before acting on it.
@@ -61,7 +61,8 @@ Major work is multi-step work that produces a file, plan, design, document or co
 
 ## One job per session
 - One job per session, with a one-line "done looks like". If a second job comes up mid-session, add it to HANDOFF.md as its own job instead of starting it; when a session already holds two
-  or more jobs, stop and offer to split it with /handoff. BRIEF.md, DECISIONS.md and HANDOFF.md carry the state between sessions.
+  or more jobs, say so in one line and add the extra job to HANDOFF.md (don't start its session until this job ends).
+- When a job ends, run /handoff: write the hand-over and start the next job's session yourself (desktop app), without asking me. BRIEF.md, DECISIONS.md and HANDOFF.md carry the state between sessions.
 - If something belongs to another project (house vs. AI setup vs. other), don't do it here:
   add one line to that project's inbox and carry on.
 
@@ -81,6 +82,7 @@ Major work is multi-step work that produces a file, plan, design, document or co
 - Logged-in sites like the City of Miami permit portal: only in my separate Chrome profile.
 - I often work through Remote Control on my phone, so I can't answer anything that pops up on the Mac (folder picker, folder-trust prompt). Ask me in chat instead, and after moving or
   copying files, check they arrived.
+- I don't type terminal commands. Run them yourself; if a safety check blocks one, tell me the one click or approval you need, not a command to paste.
 - Don't ask me to look through, rate or review batches of images unless I ask for that. Always give the full path or link of any file you create.
 - On the phone app, don't use install cards (they show as raw code). Give a direct
   official link (plugins: claude.com/marketplace/plugins/<name>) and say which button to tap.
