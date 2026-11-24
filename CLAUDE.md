@@ -22,7 +22,8 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
   recommendation, rather than waiting for me to name it.
 - Before asking me anything about method or approach, check official guidance first and tell me what it says; only ask me what the guidance can't settle.
 - When you're stuck on how to do something, list the realistic ways forward and try the best safe one before asking.
-- If a name or term is unclear or could mean more than one person, product or feature, try to figure out what I mean first (search if needed) and tell me your conclusion. Ask me only if that doesn't settle it.
+- If a name or term is unclear or could mean more than one person, product or feature, try to figure out what I mean first (search if needed) and tell me your conclusion. Ask me only if that
+  doesn't settle it.
 - Any phrase I mention that could be a tool, product or person's name is a name until a search
   says otherwise, even if it reads like a statement ("I have adhd" is a Claude Code skill).
   Search the web first; don't search only the project's files.
@@ -36,16 +37,27 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
 - Video transcripts: try free sources first (event page, video page). If those fail, use the
   vidIQ transcript tool (5 credits a video; approved).
 
+## Which skill or connector I use (I check this before every task)
+- I check the task against this list, then use the match (Skill tool or connector) without being asked. If several fit, I use them in the order shown.
+- AI setup: changing rules, scripts or hooks → superpowers:writing-plans, then test-driven-development and verification-before-completion, then requesting-code-review.
+- Setup broken or acting strange → superpowers:systematic-debugging, before any fix. New or edited skill → superpowers:writing-skills.
+- "What should I add or automate?" → claude-code-setup:claude-automation-recommender. House renders, images or video → the Higgsfield connector.
+- Design options or ideas → superpowers:brainstorming. Research questions → anthropic-skills:deep-research. Web pages → Firecrawl skills, not WebFetch.
+- Email → Gmail connector; calendar → Google Calendar connector; documents → anthropic-skills:docs (Google files: google-workspace); YouTube → vidIQ.
+- Before I say major work is done → the checker agent, then the second-look skill. If nothing installed fits a multi-step job, I search the plugin catalog and give a claude.com/marketplace link.
+
 ## Major work
 Major work is multi-step work that produces a file, plan, design, document or code change. One-off answers and small edits that are easy to undo aren't major work.
-- Start with /brief. In the same turn, write a first draft of what I asked for, marking every guess [ASSUMED] and listing each one as an open question in the brief. Finish the work once I've approved the brief.
+- Start with /brief. In the same turn, write a first draft of what I asked for, marking every guess [ASSUMED] and listing each one as an open question in the brief. Finish the work once I've
+  approved the brief.
 - Anything the brief and its sources don't cover is a question for me, not a choice for you. Show every change; don't fill gaps quietly.
 - Log each decision and its source in DECISIONS.md, including any instruction of mine that goes beyond the brief, before acting on it.
 - Before saying it's done, run the checker agent and show me its verdict, its findings and what it couldn't check. For code, also show the actual test output.
 - If /brief, /check, /handoff or the checker agent isn't available in a session (for example in the cloud), follow the same steps by hand and say so.
 
 ## One job per session
-- One job per session, with a one-line "done looks like". If a second job comes up mid-session, add it to HANDOFF.md as its own job instead of starting it; when a session already holds two or more jobs, stop and offer to split it with /handoff. BRIEF.md, DECISIONS.md and HANDOFF.md carry the state between sessions.
+- One job per session, with a one-line "done looks like". If a second job comes up mid-session, add it to HANDOFF.md as its own job instead of starting it; when a session already holds two
+  or more jobs, stop and offer to split it with /handoff. BRIEF.md, DECISIONS.md and HANDOFF.md carry the state between sessions.
 - If something belongs to another project (house vs. AI setup vs. other), don't do it here:
   add one line to that project's inbox and carry on.
 
@@ -63,7 +75,8 @@ Major work is multi-step work that produces a file, plan, design, document or co
 
 ## Setup I've decided
 - Logged-in sites like the City of Miami permit portal: only in my separate Chrome profile.
-- I often work through Remote Control on my phone, so I can't answer anything that pops up on the Mac (folder picker, folder-trust prompt). Ask me in chat instead, and after moving or copying files, check they arrived.
+- I often work through Remote Control on my phone, so I can't answer anything that pops up on the Mac (folder picker, folder-trust prompt). Ask me in chat instead, and after moving or
+  copying files, check they arrived.
 - On the phone app, don't use install cards (they show as raw code). Give a direct
   official link (plugins: claude.com/marketplace/plugins/<name>) and say which button to tap.
 
