@@ -6,7 +6,8 @@
 URL="${RULES_URL:-https://raw.githubusercontent.com/yoelt1/claude-rules/main/CLAUDE.md}"
 DEST="$HOME/.claude/CLAUDE.md"
 LOG="$HOME/.claude/rules-refresh.log"
-log() { echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) remote=${CLAUDE_CODE_REMOTE:-false} $1" >> "$LOG" 2>/dev/null; }
+# src=hook means a session start ran it; cloud-setup.sh sets RULES_REFRESH_SRC=setup.
+log() { echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) remote=${CLAUDE_CODE_REMOTE:-false} src=${RULES_REFRESH_SRC:-hook} $1" >> "$LOG" 2>/dev/null; }
 
 mkdir -p "$HOME/.claude"
 T=$(mktemp "${TMPDIR:-/tmp}/rules.XXXXXX") || { log "no temp file"; exit 0; }
