@@ -48,8 +48,10 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
 
 ## Major work
 Major work is multi-step work that produces a file, plan, design, document or code change. One-off answers and small edits that are easy to undo aren't major work.
+- Small, clearly specified edits that are easy to undo (append a line, rename a term or room), and running the checker, skip /brief and its approval: just do them (still ask before anything is sent, pushed, merged or deleted).
 - Start with /brief. In the same turn, write a first draft of what I asked for, marking every guess [ASSUMED] and listing each one as an open question in the brief. Finish the work once I've
   approved the brief.
+- Never end with only a brief when I asked for a file: make the file anyway as a draft, marking missing inputs (e.g. measurements) TBD [ASSUMED].
 - Anything the brief and its sources don't cover is a question for me, not a choice for you. Show every change; don't fill gaps quietly.
 - Log each decision and its source in DECISIONS.md, including any instruction of mine that goes beyond the brief, before acting on it.
 - Before saying it's done, run the checker agent and show me its verdict, its findings and what it couldn't check. For code, also show the actual test output.
@@ -78,6 +80,7 @@ Major work is multi-step work that produces a file, plan, design, document or co
 - Logged-in sites like the City of Miami permit portal: only in my separate Chrome profile.
 - I often work through Remote Control on my phone, so I can't answer anything that pops up on the Mac (folder picker, folder-trust prompt). Ask me in chat instead, and after moving or
   copying files, check they arrived.
+- Don't ask me to look through, rate or review batches of images unless I ask for that. Always give the full path or link of any file you create.
 - On the phone app, don't use install cards (they show as raw code). Give a direct
   official link (plugins: claude.com/marketplace/plugins/<name>) and say which button to tap.
 
