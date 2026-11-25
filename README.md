@@ -6,10 +6,13 @@ My global rules for Claude Code, in one public file. No secrets live here.
 - `refresh-rules.sh`: a session-start hook. It downloads `CLAUDE.md`, and if it differs
   from `~/.claude/CLAUDE.md`, backs up the old copy to `~/.claude/backups/rules/` and
   installs the new one. It only downloads text; it never runs downloaded code.
-- `cloud-setup.sh`: run by my "My setup" cloud environment (rules, hook, and 4 plugins:
-  superpowers, code-review-anthropics, firecrawl, claude-code-setup).
-- `LICENSE-i-have-adhd`: the MIT licence of the reply-style rules copied into `CLAUDE.md`
-  (ayghri/i-have-adhd, commit 1ecea19).
+- `cloud-setup.sh`: run by my "My setup" cloud environment (rules, hook, 4 plugins:
+  superpowers, code-review-anthropics, firecrawl, claude-code-setup, and the i-have-adhd
+  plugin pinned to commit f3e783b with its always-on flag).
+- Reply style: the i-have-adhd plugin (ayghri/i-have-adhd, MIT) adds its rules at every
+  session start; `LICENSE-i-have-adhd` is its licence. Until 25 Nov 2026 the rules text was
+  copied into `CLAUDE.md` (commit 1ecea19). Updating the plugin needs a new SkillSpector scan
+  and my yes.
 
 ## Where the rules reach
 
