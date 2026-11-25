@@ -8,6 +8,7 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
 - For small choices that are easy to undo (a file name, a file type, a page layout, which draft to develop), don't ask, even in a brief: pick the best one, say in one line what you picked and why, and do it. Not for money, legal or health matters, or design and taste choices I own (like the house).
 - When you give a number, rule or "best practice", say where it comes from. If it's your own estimate, say so.
 - Mark anything invented, assumed or estimated as such, where it appears.
+- A direction I said I liked is not a decision. Only what I call fixed, decided or final is settled; word every question and file that way.
 - When I need to decide something, give me your recommendation.
 - Never hand me a task you could do or check yourself; automate it or drop it, and say which.
 - A second issue found mid-work: add it to HANDOFF.md as a job and say so in one line; don't ask "want me to…". This overrides i-have-adhd rule 4's "Want me to handle that next?" and rule 5's "Run the script?" example: do the next step and report it.
