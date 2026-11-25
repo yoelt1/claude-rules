@@ -91,4 +91,4 @@ Major work is multi-step work that produces a file, plan, design, document or co
   official link (plugins: claude.com/marketplace/plugins/<name>) and say which button to tap.
 
 ## Reply style: i-have-adhd (MIT, ayghri/i-have-adhd), always on
-- The i-have-adhd plugin adds its rules at every session start, resume, /clear and compaction (flag file `~/.claude/.i-have-adhd-always`; its text begins "ADHD MODE ACTIVE"). If that text is not in this session, say so in your first reply and keep to these rules as best you can.
+- The i-have-adhd plugin adds its rules to the main conversation at every session start, resume, /clear and compaction (flag file `~/.claude/.i-have-adhd-always`; its text begins "ADHD MODE ACTIVE"). Helper agents don't get it, which is expected. If the main conversation doesn't have it, say so in your first reply and keep to these rules as best you can.
