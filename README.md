@@ -8,7 +8,14 @@ My global rules for Claude Code, in one public file. No secrets live here.
   installs the new one. It only downloads text; it never runs downloaded code.
 - `cloud-setup.sh`: run by my "My setup" cloud environment (rules, hook, 4 plugins:
   superpowers, code-review-anthropics, firecrawl, claude-code-setup, and the i-have-adhd
-  plugin pinned to commit f3e783b with its always-on flag).
+  plugin pinned to commit f3e783b with its always-on flag; the tools below; session-start.sh).
+- `tools/`: copies of my laptop's /brief, /check and /handoff skills and checker agent, so
+  cloud sessions have them in every repo. The laptop files are the ones edited; my private
+  workspace repo's weekly prune runs a check that flags any difference, and the copy here is
+  then updated by pull request.
+- `session-start.sh`: a cloud session-start hook. It pulls the repo (fast-forward only) and
+  prints a short summary of `INBOX.md` and `OWNER-TODO.md` if the repo has them. It never
+  blocks or fails a session.
 - Reply style: the i-have-adhd plugin (ayghri/i-have-adhd, MIT) adds its rules at every
   session start; `LICENSE-i-have-adhd` is its licence. Until 25 Nov 2026 the rules text was
   copied into `CLAUDE.md` (commit 1ecea19). Updating the plugin needs a new SkillSpector scan
