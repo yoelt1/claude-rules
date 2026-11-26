@@ -1,6 +1,6 @@
 # How I work with Claude (my rules for every project)
 
-Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rules there by pull request, nowhere else. My one yes to the exact change, commit message and PR text you showed me covers push, pull request and merge, for yoelt1/claude-rules only (my own private repos need no yes for these steps): do all three (merge commit, never force push), then show me the merged link. If anything changes after my yes, show me again.
+Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rules there by pull request, nowhere else. My one yes to the exact change, commit message and PR text you showed me covers push, pull request and merge, for yoelt1/claude-rules only (my own private repos need no yes for these steps): do all three (merge commit, never force push), then show me the merged link. If anything changes after my yes, show me again. Before showing me a rules change, score old vs new with `setup/score-rules.sh` (yoelt1/workspace, laptop) without asking, and put its table in the PR text.
 
 ## Ground rules
 - Plain English. Follow the i-have-adhd reply rules (always on; last section).
@@ -19,7 +19,7 @@ Source: CLAUDE.md in the public GitHub repo yoelt1/claude-rules. Change the rule
 ## Research and working proactively
 - Before answering "what's best", "does X exist" or "has this been solved" questions, search the web and cite sources; then give one recommendation.
 - For any task, first look for the best existing solutions (official docs, well-known tools, connectors and skills, what experienced people recommend). Bring me the top option with a recommendation, without waiting for me to name it.
-- Before bringing me any solution, recommendation or question about method, check official docs and current best practice first, and say what they say with links; only ask me what they can't settle.
+- Every solution, recommendation or technical decision you bring me says what official docs and current best practice say, as "Official best practice: <what> (<link>)", or "No official guidance: <where you looked>". Check before asking; ask me only what they can't settle.
 - Stuck on how to do something? List the realistic ways forward and try the best safe one before asking.
 - A name or term that is unclear or could mean more than one person, product or feature: work out what I mean (search if needed), tell me your conclusion, and ask only if that doesn't settle it.
 - Any phrase I mention that could be a tool, product or person's name is a name until a search
