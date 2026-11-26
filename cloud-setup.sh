@@ -9,14 +9,34 @@
 #    (step 4) the i-have-adhd plugin, pinned, with its always-on flag (job 20). The old My setup
 #    script had this loop; without it, sessions started by other sessions got no
 #    plugins (tested 2026-11-23; workspace DECISIONS.md, job 14).
-BASE="https://raw.githubusercontent.com/yoelt1/claude-rules/main"
+# 5. Installs /brief, /check, /handoff and the checker agent from tools/ (job 13b).
+# 6. Installs session-start.sh as a second SessionStart hook: pull, then a short
+#    INBOX.md / OWNER-TODO.md summary (job 13c).
+# CLOUD_SETUP_BASE and RULES_URL override the download source, for tests only.
+BASE="${CLOUD_SETUP_BASE:-https://raw.githubusercontent.com/yoelt1/claude-rules/main}"
 mkdir -p ~/.claude/hooks
 
 curl -fsSL --max-time 20 "$BASE/refresh-rules.sh" -o ~/.claude/hooks/refresh-rules.sh \
   && chmod +x ~/.claude/hooks/refresh-rules.sh \
   && RULES_REFRESH_SRC=setup bash ~/.claude/hooks/refresh-rules.sh >/dev/null
 
-# Add the SessionStart hook, keeping any other settings already in the file.
+# 5. Skills and agent: copies of the laptop's ~/.claude files (the workspace repo's
+#    setup/check-cloud-tools.sh flags when they differ). A file that fails to download,
+#    or doesn't start with "---", is skipped and any older copy is kept.
+for f in skills/brief/SKILL.md skills/check/SKILL.md skills/handoff/SKILL.md agents/checker.md; do
+  mkdir -p "$HOME/.claude/$(dirname "$f")"
+  t=$(mktemp "${TMPDIR:-/tmp}/tool.XXXXXX") || continue
+  if curl -fsSL --max-time 20 "$BASE/tools/$f" -o "$t" && [ "$(head -1 "$t")" = "---" ]; then
+    chmod 644 "$t" && mv "$t" "$HOME/.claude/$f"
+  fi
+  rm -f "$t"
+done
+
+# 6. Session-start pull and summary hook (added to settings below if it downloaded).
+curl -fsSL --max-time 20 "$BASE/session-start.sh" -o ~/.claude/hooks/session-start.sh \
+  && chmod +x ~/.claude/hooks/session-start.sh
+
+# Add the SessionStart hooks, keeping any other settings already in the file.
 python3 - <<'PY' || true
 import json, os
 p = os.path.expanduser("~/.claude/settings.json")
@@ -24,10 +44,16 @@ try:
     s = json.load(open(p))
 except Exception:
     s = {}
-cmd = '"$HOME/.claude/hooks/refresh-rules.sh"'
 hooks = s.setdefault("hooks", {}).setdefault("SessionStart", [])
-if not any(h.get("command") == cmd for e in hooks for h in e.get("hooks", [])):
-    hooks.append({"hooks": [{"type": "command", "command": cmd, "timeout": 20}]})
+for name, matcher, timeout in [("refresh-rules.sh", None, 20), ("session-start.sh", "startup|resume", 30)]:
+    if not os.path.exists(os.path.expanduser("~/.claude/hooks/" + name)):
+        continue
+    cmd = '"$HOME/.claude/hooks/%s"' % name
+    if not any(h.get("command") == cmd for e in hooks for h in e.get("hooks", [])):
+        entry = {"hooks": [{"type": "command", "command": cmd, "timeout": timeout}]}
+        if matcher:
+            entry["matcher"] = matcher
+        hooks.append(entry)
 json.dump(s, open(p, "w"), indent=2)
 PY
 
